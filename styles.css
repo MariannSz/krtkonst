@@ -1,0 +1,25 @@
+.header {
+    color: #2D3631;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: #2D3631;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+}
