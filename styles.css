@@ -1,25 +1,40 @@
+@font-face {
+  font-family: navFont;
+  src: url(Karla/static/Karla-Bold.ttf);
+}
+
 .header {
-    color: #2D3631;
+  color: #2d3631;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; /* TODO: test */
+  padding: 1rem 2rem;
+  font-family: navFont;
+  flex-wrap: wrap;
 }
 
 a {
-    text-decoration: none;
-    color: #2D3631;
+  text-decoration: none;
+  color: #2d3631;
 }
 
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    width: 20rem;
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+  margin: 0.5rem 0;
 }
 
 .contacts {
-    display: flex;
-    justify-content: space-between;
-    width: 20rem;
+  display: flex;
+  gap: 2rem;
 }
+.contacts-item {
+  display: flex;
+  gap: 0.5rem;
+}
+/* TODO: make it mobile friendly */
