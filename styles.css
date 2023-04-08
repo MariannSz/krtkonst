@@ -127,14 +127,11 @@ a:hover {
   text-align: center;
 }
 
-.about-section-header {
+.about-section-header,
+.services-section-header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-}
-
-.about-section-header img {
-  margin: 0 1rem;
 }
 
 .about-section-content {
