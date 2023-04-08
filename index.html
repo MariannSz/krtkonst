@@ -17,16 +17,25 @@
             <a href="#">Képgaléria</a>
           </div>
           <div class="contacts">
-            <a href="#" class="contacts-item">
-              <img src="icons/telephone.svg" alt="My Happy SVG" />
+            <a href="#" id="phoneInfo" class="contacts-item">
+              <img
+                src="icons/telephone.svg"
+                alt="phone icon svg"
+                id="phoneIcon"
+              />
               +36-30/276-3013
             </a>
-            <a href="#" class="contacts-item">
-              <img src="icons/envelope-at.svg" alt="My Happy SVG" />
+            <a href="#" id="mailInfo" class="contacts-item">
+              <img
+                src="icons/envelope-at.svg"
+                alt="envelope icon svg"
+                id="mailIcon"
+              />
               info@kertkonstruktor.hu
             </a>
           </div>
         </nav>
+        <div id="demo"></div>
       </div>
       <div class="hero-section">
         <img
@@ -67,10 +76,28 @@
               javításáig (öntözőrendszerek, mesterséges patakok, kisebb
               önkeringető vízesések, kisebb kerti tavak).
             </p>
-            <button>Munkáink</button>
+            <a href="#">Munkáink</a>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      let phoneInfo = document.getElementById("phoneInfo");
+      let phoneIcon = document.getElementById("phoneIcon");
+      let mailInfo = document.getElementById("mailInfo");
+      let mailIcon = document.getElementById("mailIcon");
+      phoneInfo.addEventListener("mouseenter", (event) => {
+        phoneIcon.src = "icons/telephone-hover.svg";
+      });
+      phoneInfo.addEventListener("mouseleave", (event) => {
+        phoneIcon.src = "icons/telephone.svg";
+      });
+      mailInfo.addEventListener("mouseenter", (event) => {
+        mailIcon.src = "icons/envelope-at-hover.svg";
+      });
+      mailInfo.addEventListener("mouseleave", (event) => {
+        mailIcon.src = "icons/envelope-at.svg";
+      });
+    </script>
   </body>
 </html>
