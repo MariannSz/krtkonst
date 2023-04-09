@@ -63,6 +63,7 @@ a:hover {
 
 .hero-section {
   position: relative;
+  margin: 0 0 5.5rem;
 }
 
 .hero-section img {
@@ -128,18 +129,28 @@ a:hover {
 }
 
 .about-section-header,
-.services-section-header {
+.services-section-header,
+.gallery-section-header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.about-section-content,
+.services-section-content {
+  margin: 1.5rem 4.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 4.5rem;
 }
 
 .about-section-content {
-  margin: 0 4.5rem;
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  gap: 2rem;
+}
+
+.services-section-content {
+  align-items: flex-start;
 }
 
 .about-section-content img {
@@ -155,8 +166,126 @@ a:hover {
   font-family: boldKarlaFont;
   font-size: 2rem;
 }
+
 .about-section-right-col a:hover {
   background: #05994c;
+}
+
+.services-left-col {
+  display: flex;
+  gap: 4rem;
+}
+
+.services-left-col p,
+.services-left-col ul {
+  opacity: 75%;
+}
+
+.services-left-col p {
+  margin: 0;
+  font-family: boldKarlaFont;
+  font-size: 1.813rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-family: lightPoppinsFont;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+.services-section-images {
+  position: relative;
+}
+
+#bushTrimmingImg {
+  position: absolute;
+  left: -10%;
+  top: 60%;
+  height: 80%;
+}
+
+.services-list-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-section-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 4.5rem;
+}
+
+.thumbnail-img {
+  height: 15rem;
+  border-radius: 0.5rem;
+}
+
+.thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+
+.thumbnail-overlay {
+  border-radius: 0.5rem;
+  height: 98%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+  color: #f5f5f5;
+  text-align: center;
+  opacity: 0;
+}
+
+.image-count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f5f5f5;
+  font-family: boldKarlaFont;
+  font-size: 2rem;
+  margin: 0;
+}
+.img-viewer-container {
+  position: absolute;
+  display: none;
+}
+
+.large-img-container img {
+  max-width: 30rem;
+  max-height: 22rem;
+  border-radius: 0.25rem;
+}
+
+.thumbnails-reel {
+  display: flex;
+  gap: 1rem;
+  width: 45rem;
+  overflow-y: auto;
+}
+
+.thumbnails-reel img {
+  align-self: flex-start;
+  height: 4rem;
+  border-radius: 0.125rem;
+}
+
+.close-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.8rem;
+  font-size: 2.5rem;
 }
 
 /* TODO: make it mobile friendly */
