@@ -262,39 +262,39 @@
             <span class="close-button" id="x-button-1">&times;</span>
             <div class="large-img-container">
               <img
-                src="assets/subgalley-1/pic1.jpg"
+                src="assets/subgallery-1/pic1.jpg"
                 alt="garden under construction"
-                id="large-img"
+                id="large-img-1"
               />
             </div>
             <div class="thumbnails-reel">
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic1.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail1.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic1.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic2.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail2.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic2.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail3.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic3.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail3.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic3.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail4.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic4.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail4.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic4.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail5.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic5.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail5.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic5.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail6.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic6.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail6.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic6.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail7.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic7.jpg'"
+                src="assets/subgallery-1/thumbnails/thumbnail7.png"
+                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic7.jpg'"
               />
             </div>
           </div>
@@ -302,39 +302,43 @@
             <span class="close-button" id="x-button-2">&times;</span>
             <div class="large-img-container">
               <img
-                src="assets/subgalley-1/pic1.jpg"
+                src="assets/subgallery-2/pic1.jpg"
                 alt="garden under construction"
-                id="large-img"
+                id="large-img-2"
               />
             </div>
             <div class="thumbnails-reel">
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic1.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail1.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic1.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic2.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail2.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic2.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail3.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic3.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail3.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic3.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail4.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic4.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail4.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic4.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail5.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic5.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail5.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic5.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail6.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic6.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail6.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic6.jpg'"
               />
               <img
-                src="assets/subgalley-1/thumbnails/thumbnail7.png"
-                onclick="document.getElementById('large-img').src = 'assets/subgalley-1/pic7.jpg'"
+                src="assets/subgallery-2/thumbnails/thumbnail7.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic7.jpg'"
+              />
+              <img
+                src="assets/subgallery-2/thumbnails/thumbnail8.png"
+                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic8.jpg'"
               />
             </div>
           </div>
@@ -460,15 +464,41 @@
         element.addEventListener("click", (event) => {
           let modalOverlay = document.getElementById("modal-overlay");
           let exitButton = document.getElementById(`x-button-${ind + 1}`);
-          let modal = document.getElementById(`subgallery-${ind + 1}`);
+          let imgViewerContainer = document.getElementById(
+            `subgallery-${ind + 1}`
+          );
+          let imgViewerThumbnailsReel =
+            imgViewerContainer.querySelectorAll(".thumbnails-reel")[0];
+          console.log(`imgViewerReel: ${imgViewerThumbnailsReel}`);
+          let imgViewerThumbnails =
+            imgViewerThumbnailsReel.querySelectorAll("img");
           modalOverlay.style.display = "block";
-          modal.style.background = "#f5f5f5";
-          modal.style.padding = "3rem";
-          modal.style.display = "flex";
-          modal.style.alignItems = "center";
-          modal.style.gap = "2rem";
-          modal.style.flexDirection = "column";
-          modal.style.borderRadius = "0.5rem";
+          imgViewerContainer.style.background = "#f5f5f5";
+          imgViewerContainer.style.padding = "3rem";
+          imgViewerContainer.style.display = "flex";
+          imgViewerContainer.style.alignItems = "center";
+          imgViewerContainer.style.gap = "2rem";
+          imgViewerContainer.style.flexDirection = "column";
+          imgViewerContainer.style.borderRadius = "0.5rem";
+          document.getElementById(
+            `large-img-${ind + 1}`
+          ).src = `assets/subgallery-${ind + 1}/pic1.jpg`;
+          imgViewerThumbnails.forEach((element, ind) => {
+            element.style.padding = "0";
+            element.style.background = "";
+          });
+          imgViewerThumbnails[0].style.padding = "0.125rem";
+          imgViewerThumbnails[0].style.background = "green";
+          imgViewerThumbnails.forEach((element, ind) => {
+            element.addEventListener("click", (event) => {
+              imgViewerThumbnails.forEach((element, ind) => {
+                element.style.padding = "0";
+                element.style.background = "";
+              });
+              element.style.padding = "0.125rem";
+              element.style.background = "green";
+            });
+          });
           modalOverlay.addEventListener("click", (event) => {
             document.getElementById(`subgallery-${ind + 1}`).style.display =
               "none";
