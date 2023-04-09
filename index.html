@@ -740,11 +740,13 @@
               "none";
             document.getElementById("modal-overlay").style.display = "none";
           });
+          modalOverlay.removeEventListener("click", () => {});
           exitButton.addEventListener("click", (event) => {
             document.getElementById(`subgallery-${ind + 1}`).style.display =
               "none";
             document.getElementById("modal-overlay").style.display = "none";
           });
+          exitButton.removeEventListener("click", () => {});
         });
       });
       thumbnails.forEach((element, ind) => {
