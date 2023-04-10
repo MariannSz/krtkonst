@@ -422,6 +422,9 @@ li {
 }
 
 @media only screen and (max-width: 800px) {
+  .separator-line {
+    display: none;
+  }
   .header {
     display: none;
   }
