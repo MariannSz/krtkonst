@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="modal-overlay"></div>
-    <div id="dropdown-overlay" onclick="closePhoneDropdown()"></div>
+    <div id="dropdown-overlay" onclick="closeDropdownElements()"></div>
     <div id="copy-to-clipboard-success"></div>
     <div class="container">
       <div class="phone-dropdown" id="phone-dropdown">
@@ -790,21 +790,31 @@
         document.getElementById("dropdown-overlay").style.display = "none";
       };
       const openEmailDropdown = () => {
-        let phoneDropdown = document.getElementById("email-dropdown");
-        phoneDropdown.style.display = "flex";
-        phoneDropdown.style.flexDirection = "column";
-        phoneDropdown.style.gap = "0.5rem";
+        let emailDropdown = document.getElementById("email-dropdown");
+        emailDropdown.style.display = "flex";
+        emailDropdown.style.flexDirection = "column";
+        emailDropdown.style.gap = "0.5rem";
         document.getElementById("dropdown-overlay").style.display = "block";
       };
       const closeEmailDropdown = () => {
         document.getElementById("email-dropdown").style.display = "none";
         document.getElementById("dropdown-overlay").style.display = "none";
       };
+      const closeCopyFeedbackDropdown = () => {
+        let feedbackPopUp = document.getElementById(
+          "copy-to-clipboard-success"
+        );
+        feedbackPopUp.style.display = "none";
+      };
+      const closeDropdownElements = () => {
+        closePhoneDropdown();
+        closeEmailDropdown();
+        closeCopyFeedbackDropdown();
+      };
       const copyToClipboard = async (copyText) => {
         let text = copyText;
         try {
           await navigator.clipboard.writeText(text);
-          console.log("Content copied to clipboard");
           let feedbackPopUp = document.getElementById(
             "copy-to-clipboard-success"
           );
@@ -814,7 +824,6 @@
             feedbackPopUp.style.display = "none";
           }, 3000);
         } catch (err) {
-          console.error("Failed to copy: ", err);
           feedbackPopUp.innerText =
             "Hiba történt, kérem próbálja meg manuálisan";
           feedbackPopUp.style.display = "block";

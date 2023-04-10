@@ -367,7 +367,7 @@ li {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 4;
+  z-index: 5;
 }
 
 #copy-to-clipboard-success {
@@ -378,8 +378,9 @@ li {
   font-family: lightPoppinsFont;
   position: fixed;
   z-index: 6;
-  top: 7.5rem;
-  right: 5rem;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
   border-radius: 0.25rem;
   opacity: 95%;
 }
