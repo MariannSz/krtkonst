@@ -12,11 +12,13 @@
     <div id="dropdown-overlay" onclick="closeDropdownElements()"></div>
     <div id="copy-to-clipboard-success"></div>
     <div class="mobile-nav-menu" id="mobile-nav-menu">
-      <a href="#about">Rólunk</a>
-      <a href="#services">Szolgáltatásaink</a>
-      <a href="#gallery">Képgaléria</a>
-      <a href="tel:36302763013">Hívás</a>
-      <a href="mailto:info@kertkonstruktor.hu">Üzenet küldése</a>
+      <a href="#about" onclick="closeMobileNav()">Rólunk</a>
+      <a href="#services" onclick="closeMobileNav()">Szolgáltatásaink</a>
+      <a href="#gallery" onclick="closeMobileNav()">Képgaléria</a>
+      <a href="tel:36302763013" onclick="closeMobileNav()">Hívás</a>
+      <a href="mailto:info@kertkonstruktor.hu" onclick="closeMobileNav()"
+        >Üzenet küldése</a
+      >
     </div>
     <div class="container">
       <div class="phone-dropdown" id="phone-dropdown">
@@ -34,8 +36,6 @@
               id="phoneInfo"
               onclick="copyToClipboard(`+36302763013`)"
               class="contacts-item"
-              onmouseenter="colorMobilePhoneIcon()"
-              onmouseleave="resetMobilePhoneIcon()"
             >
               <img
                 src="icons/telephone.svg"
@@ -48,8 +48,6 @@
               id="mailInfo"
               onclick="copyToClipboard(`info@kertkonstruktor.hu`)"
               class="contacts-item"
-              onmouseenter="colorMobileMailIcon()"
-              onmouseleave="resetMobileMailIcon()"
             >
               <img
                 src="icons/envelope-at.svg"
@@ -264,7 +262,7 @@
         <div class="gallery-section-content">
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">7 kép</p>
             <img
               src="assets/thumbnails/thumbnail_1.png"
               class="thumbnail-img"
@@ -272,7 +270,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">8 kép</p>
             <img
               src="assets/thumbnails/thumbnail_2.png"
               class="thumbnail-img"
@@ -280,7 +278,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">14 kép</p>
             <img
               src="assets/thumbnails/thumbnail_3.png"
               class="thumbnail-img"
@@ -288,7 +286,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">2 kép</p>
             <img
               src="assets/thumbnails/thumbnail_4.png"
               class="thumbnail-img"
@@ -296,7 +294,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">2 kép</p>
             <img
               src="assets/thumbnails/thumbnail_5.png"
               class="thumbnail-img"
@@ -304,7 +302,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">3 kép</p>
             <img
               src="assets/thumbnails/thumbnail_6.png"
               class="thumbnail-img"
@@ -312,7 +310,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">1 kép</p>
             <img
               src="assets/thumbnails/thumbnail_7.png"
               class="thumbnail-img"
@@ -320,7 +318,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">3 kép</p>
             <img
               src="assets/thumbnails/thumbnail_8.png"
               class="thumbnail-img"
@@ -328,7 +326,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">2 kép</p>
             <img
               src="assets/thumbnails/thumbnail_9.png"
               class="thumbnail-img"
@@ -336,7 +334,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">2 kép</p>
             <img
               src="assets/thumbnails/thumbnail_10.png"
               class="thumbnail-img"
@@ -344,7 +342,7 @@
           </div>
           <div class="thumbnail">
             <div class="thumbnail-overlay"></div>
-            <p class="image-count"></p>
+            <p class="image-count">3 kép</p>
             <img
               src="assets/thumbnails/thumbnail_11.png"
               class="thumbnail-img"
@@ -354,39 +352,49 @@
             <span class="close-button" id="x-button-1">&times;</span>
             <div class="large-img-container">
               <img
+                src="icons/caret-left-fill.svg"
+                style="height: 2rem"
+                onclick="selectPreviousImg(1, 7)"
+              />
+              <img
                 src="assets/subgallery-1/pic1.jpg"
                 alt="garden under construction"
                 id="large-img-1"
+              />
+              <img
+                src="icons/caret-right-fill.svg"
+                onclick="selectNextImg(1, 7)"
+                style="height: 2rem"
               />
             </div>
             <div class="thumbnails-reel">
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic1.jpg'"
+                onclick="selectImage(1, 1)"
               />
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic2.jpg'"
+                onclick="selectImage(1, 2)"
               />
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail3.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic3.jpg'"
+                onclick="selectImage(1, 3)"
               />
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail4.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic4.jpg'"
+                onclick="selectImage(1, 4)"
               />
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail5.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic5.jpg'"
+                onclick="selectImage(1, 5)"
               />
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail6.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic6.jpg'"
+                onclick="selectImage(1, 6)"
               />
               <img
                 src="assets/subgallery-1/thumbnails/thumbnail7.png"
-                onclick="document.getElementById('large-img-1').src = 'assets/subgallery-1/pic7.jpg'"
+                onclick="selectImage(1, 7)"
               />
             </div>
           </div>
@@ -395,43 +403,53 @@
             <span class="close-button" id="x-button-2">&times;</span>
             <div class="large-img-container">
               <img
+                src="icons/caret-left-fill.svg"
+                style="height: 2rem"
+                onclick="selectPreviousImg(2, 8)"
+              />
+              <img
                 src="assets/subgallery-2/pic1.jpg"
                 alt="garden under construction"
                 id="large-img-2"
+              />
+              <img
+                src="icons/caret-right-fill.svg"
+                onclick="selectNextImg(2, 8)"
+                style="height: 2rem"
               />
             </div>
             <div class="thumbnails-reel">
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic1.jpg'"
+                onclick="selectImage(2, 1)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic2.jpg'"
+                onclick="selectImage(2, 2)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail3.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic3.jpg'"
+                onclick="selectImage(2, 3)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail4.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic4.jpg'"
+                onclick="selectImage(2, 4)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail5.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic5.jpg'"
+                onclick="selectImage(2, 5)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail6.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic6.jpg'"
+                onclick="selectImage(2, 6)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail7.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic7.jpg'"
+                onclick="selectImage(2, 7)"
               />
               <img
                 src="assets/subgallery-2/thumbnails/thumbnail8.png"
-                onclick="document.getElementById('large-img-2').src = 'assets/subgallery-2/pic8.jpg'"
+                onclick="selectImage(2, 8)"
               />
             </div>
           </div>
@@ -439,67 +457,77 @@
             <span class="close-button" id="x-button-3">&times;</span>
             <div class="large-img-container">
               <img
+                src="icons/caret-left-fill.svg"
+                style="height: 2rem"
+                onclick="selectPreviousImg(3, 14)"
+              />
+              <img
                 src="assets/subgallery-3/pic1.jpg"
                 alt="garden under construction"
                 id="large-img-3"
+              />
+              <img
+                src="icons/caret-right-fill.svg"
+                onclick="selectNextImg(3, 14)"
+                style="height: 2rem"
               />
             </div>
             <div class="thumbnails-reel">
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic1.jpg'"
+                onclick="selectImage(3, 1)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic2.jpg'"
+                onclick="selectImage(3, 2)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail3.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic3.jpg'"
+                onclick="selectImage(3, 3)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail4.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic4.jpg'"
+                onclick="selectImage(3, 4)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail5.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic5.jpg'"
+                onclick="selectImage(3, 5)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail6.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic6.jpg'"
+                onclick="selectImage(3, 6)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail7.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic7.jpg'"
+                onclick="selectImage(3, 7)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail8.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic8.jpg'"
+                onclick="selectImage(3, 8)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail9.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic9.jpg'"
+                onclick="selectImage(3, 9)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail10.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic10.jpg'"
+                onclick="selectImage(3, 10)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail11.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic11.jpg'"
+                onclick="selectImage(3, 11)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail12.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic12.jpg'"
+                onclick="selectImage(3, 12)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail13.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic13.jpg'"
+                onclick="selectImage(3, 13)"
               />
               <img
                 src="assets/subgallery-3/thumbnails/thumbnail14.png"
-                onclick="document.getElementById('large-img-3').src = 'assets/subgallery-3/pic14.jpg'"
+                onclick="selectImage(3, 14)"
               />
             </div>
           </div>
@@ -675,71 +703,18 @@
       </div>
     </div>
     <script>
-      let mobileNavToggle = document.getElementById("mobile-nav-toggle");
-
-      if (mobileNavToggle) {
-        mobileNavToggle.addEventListener("mouseenter", (event) => {
-          mobileNavToggle.src = "icons/list-hover.svg";
-        });
-        mobileNavToggle.addEventListener("mouseleave", (event) => {
-          mobileNavToggle.src = "icons/list.svg";
-        });
-      }
-
       let gallery = document.getElementsByClassName(
         "gallery-section-content"
       )[0];
       let thumbnails = document.querySelectorAll(".thumbnail");
       thumbnails.forEach((element, ind) => {
-        element.addEventListener("mouseenter", (event) => {
+        /* element.addEventListener("mouseenter", (event) => {
           let currentImg = thumbnails[ind].getElementsByTagName("img")[0];
           let currentOverlay =
             thumbnails[ind].getElementsByClassName("image-count")[0];
           let currentOverlayBg =
             thumbnails[ind].getElementsByClassName("thumbnail-overlay")[0];
           console.log(`current overlay = ${currentOverlay}`);
-          currentOverlay.addEventListener("mouseenter", (event) => {
-            switch (ind) {
-              case 0:
-                currentOverlay.innerHTML = "7 kép";
-                break;
-              case 1:
-                currentOverlay.innerHTML = "8 kép";
-                break;
-              case 2:
-                currentOverlay.innerHTML = "14 kép";
-                break;
-              case 3:
-                currentOverlay.innerHTML = "2 kép";
-                break;
-              case 4:
-                currentOverlay.innerHTML = "2 kép";
-                break;
-              case 5:
-                currentOverlay.innerHTML = "3 kép";
-                break;
-              case 6:
-                currentOverlay.innerHTML = "1 kép";
-                break;
-              case 7:
-                currentOverlay.innerHTML = "3 kép";
-                break;
-              case 8:
-                currentOverlay.innerHTML = "2 kép";
-                break;
-              case 9:
-                currentOverlay.innerHTML = "2 kép";
-                break;
-              case 10:
-                currentOverlay.innerHTML = "3 kép";
-                break;
-
-              default:
-                break;
-            }
-            currentImg.style.boxShadow = "8px 8px 16px rgba(0, 0, 0, 0.25)";
-            currentOverlayBg.style.opacity = "50%";
-          });
           switch (ind) {
             case 0:
               currentOverlay.innerHTML = "7 kép";
@@ -783,7 +758,7 @@
           currentOverlayBg.style.opacity = "50%";
           currentOverlayBg.style.backgroundImage =
             "linear-gradient(#05994c, #27d408)";
-        });
+        }); */
         element.addEventListener("click", (event) => {
           let modalOverlay = document.getElementById("modal-overlay");
           let exitButton = document.getElementById(`x-button-${ind + 1}`);
@@ -836,7 +811,7 @@
           exitButton.removeEventListener("click", () => {});
         });
       });
-      thumbnails.forEach((element, ind) => {
+      /* thumbnails.forEach((element, ind) => {
         element.addEventListener("mouseleave", (event) => {
           let currentImg = thumbnails[ind].getElementsByTagName("img")[0];
           let currentOverlay =
@@ -847,7 +822,7 @@
           currentImg.style.boxShadow = "";
           currentOverlayBg.style.backgroundImage = "";
         });
-      });
+      }); */
       const openPhoneDropdown = () => {
         let phoneDropdown = document.getElementById("phone-dropdown");
         phoneDropdown.style.display = "flex";
@@ -857,7 +832,6 @@
       };
       const closePhoneDropdown = () => {
         document.getElementById("phone-dropdown").style.display = "none";
-        // document.getElementById("dropdown-overlay").style.display = "none";
       };
       const openEmailDropdown = () => {
         let emailDropdown = document.getElementById("email-dropdown");
@@ -868,7 +842,6 @@
       };
       const closeEmailDropdown = () => {
         document.getElementById("email-dropdown").style.display = "none";
-        // document.getElementById("dropdown-overlay").style.display = "none";
       };
       const closeCopyFeedbackDropdown = () => {
         let feedbackPopUp = document.getElementById(
@@ -876,13 +849,15 @@
         );
         feedbackPopUp.style.display = "none";
       };
+      const closeMobileNav = () => {
+        let mobileMenu = document.getElementById("mobile-nav-menu");
+        mobileMenu.style.display = "none";
+      };
       const closeDropdownElements = () => {
         document.getElementById("dropdown-overlay").style.display = "none";
         closePhoneDropdown();
         closeEmailDropdown();
         closeCopyFeedbackDropdown();
-        let mobileMenu = document.getElementById("mobile-nav-menu");
-        mobileMenu.style.display = "none";
       };
       const copyToClipboard = async (copyText) => {
         let text = copyText;
@@ -917,40 +892,88 @@
             mobileMenu.style.display = "none";
             document.getElementById("dropdown-overlay").style.display = "none";
           }
-        } else {
         }
       };
-      const colorPhoneIcon = () => {
-        let phoneIcon = document.getElementById("phoneIcon");
-        phoneIcon.src = `icons/telephone-hover.svg`;
+      const selectImage = (subGalleryNumber, imageNumber) => {
+        document.getElementById(
+          `large-img-${subGalleryNumber}`
+        ).src = `assets/subgallery-${subGalleryNumber}/pic${imageNumber}.jpg`;
       };
-      const resetPhoneIcon = () => {
-        let phoneIcon = document.getElementById("phoneIcon");
-        phoneIcon.src = `icons/telephone.svg`;
+      const selectPreviousImg = (subGalleryNumber, totalPics) => {
+        let selectedImageURL = document.getElementById(
+          `large-img-${subGalleryNumber}`
+        ).src;
+        console.log(`selectedImageURL: ${selectedImageURL}`);
+        let selectedNumberString = selectedImageURL.slice(-5, -4);
+        let selectedImgNumber = parseInt(selectedNumberString);
+        console.log(`selectedImgNumber: ${selectedImgNumber}`);
+        if (selectedImgNumber === 1) {
+          return;
+        } else {
+          document.getElementById(
+            `large-img-${subGalleryNumber}`
+          ).src = `assets/subgallery-${subGalleryNumber}/pic${
+            selectedImgNumber - 1
+          }.jpg`;
+          let subGallery = document.getElementById(
+            `subgallery-${subGalleryNumber}`
+          );
+          let imgViewerThumbnaislsReel =
+            subGallery.getElementsByClassName(`thumbnails-reel`)[0];
+          let imgViewerThumbnails =
+            imgViewerThumbnaislsReel.querySelectorAll(`img`);
+          console.log(`imgViewerThumbnails: ${imgViewerThumbnails}`);
+          imgViewerThumbnails.forEach((element, ind) => {
+            element.style.padding = "0";
+            element.style.background = "";
+          });
+          imgViewerThumbnails.forEach((element, ind) => {
+            if (ind > 0) {
+              imgViewerThumbnails[selectedImgNumber - 2].style.padding =
+                "0.125rem";
+              imgViewerThumbnails[selectedImgNumber - 2].style.background =
+                "#05994c";
+            }
+          });
+        }
       };
-      const colorMailIcon = () => {
-        let mailIcon = document.getElementById("mailIcon");
-        mailIcon.src = `icons/envelope-at-hover.svg`;
-      };
-      const resetMailIcon = () => {
-        let mailIcon = document.getElementById("mailIcon");
-        mailIcon.src = `icons/envelope-at.svg`;
-      };
-      const colorMobilePhoneIcon = () => {
-        let phoneIcon = document.getElementById("mobile-phoneIcon");
-        phoneIcon.src = `icons/telephone-hover.svg`;
-      };
-      const resetMobilePhoneIcon = () => {
-        let phoneIcon = document.getElementById("mobile-phoneIcon");
-        phoneIcon.src = `icons/telephone.svg`;
-      };
-      const colorMobileMailIcon = () => {
-        let mailIcon = document.getElementById("mobile-mailIcon");
-        mailIcon.src = `icons/envelope-at-hover.svg`;
-      };
-      const resetMobileMailIcon = () => {
-        let mailIcon = document.getElementById("mobile-mailIcon");
-        mailIcon.src = `icons/envelope-at.svg`;
+      const selectNextImg = (subGalleryNumber, totalPics) => {
+        let selectedImageURL = document.getElementById(
+          `large-img-${subGalleryNumber}`
+        ).src;
+        console.log(`selectedImageURL: ${selectedImageURL}`);
+        let selectedNumberString = selectedImageURL.slice(-5, -4);
+        let selectedImgNumber = parseInt(selectedNumberString);
+        console.log(`selectedImgNumber: ${selectedImgNumber}`);
+
+        if (selectedImgNumber === totalPics) {
+          return;
+        } else {
+          document.getElementById(
+            `large-img-${subGalleryNumber}`
+          ).src = `assets/subgallery-${subGalleryNumber}/pic${
+            selectedImgNumber + 1
+          }.jpg`;
+          let subGallery = document.getElementById(
+            `subgallery-${subGalleryNumber}`
+          );
+          let imgViewerThumbnaislsReel =
+            subGallery.getElementsByClassName(`thumbnails-reel`)[0];
+          let imgViewerThumbnails =
+            imgViewerThumbnaislsReel.querySelectorAll(`img`);
+          console.log(`imgViewerThumbnails: ${imgViewerThumbnails}`);
+          imgViewerThumbnails.forEach((element, ind) => {
+            element.style.padding = "0";
+            element.style.background = "";
+          });
+          imgViewerThumbnails.forEach((element, ind) => {
+            if (ind < imgViewerThumbnails.length - 1) {
+              imgViewerThumbnails[selectedImgNumber].style.padding = "0.125rem";
+              imgViewerThumbnails[selectedImgNumber].style.background =
+                "#05994c";
+            }
+          });
+        }
       };
     </script>
   </body>
