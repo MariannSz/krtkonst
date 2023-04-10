@@ -250,8 +250,8 @@ li {
 
 #bushTrimmingImg {
   position: absolute;
-  left: -10%;
-  top: 60%;
+  left: -7rem;
+  top: 16rem;
   height: 80%;
 }
 
@@ -268,7 +268,7 @@ li {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin: 1.5rem 4.5rem;
+  margin: 2.5rem 4.5rem;
 }
 
 .thumbnail-img {
@@ -421,7 +421,6 @@ li {
   opacity: 95%;
 }
 
-/* TODO: make it mobile friendly */
 @media only screen and (max-width: 800px) {
   .header {
     display: none;
@@ -434,9 +433,124 @@ li {
   .mobile-nav-menu {
     top: 3.3rem;
   }
+  .co-name {
+    font-size: 3rem;
+  }
+  .slogan {
+    font-size: 1.5rem;
+  }
+  .about-section-content,
+  .services-section-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .hero-section {
+    margin: 0 0 2.5rem;
+  }
+
+  .services-section-images {
+    position: relative;
+    display: flex;
+  }
+  #rockGardenImg {
+    position: absolute;
+    left: 13rem;
+    top: -15rem;
+    height: 15rem;
+  }
+
+  #bushTrimmingImg {
+    left: 25rem;
+    top: -14rem;
+    height: 15rem;
+  }
+
+  .img-viewer-container {
+    /* width: 60%; */
+    width: auto;
+  }
+  .thumbnails-reel {
+    max-width: 25rem;
+  }
 }
 @media only screen and (max-width: 600px) {
   .mobile-navigation .contacts {
     font-size: 0;
+  }
+  .co-name {
+    font-size: 2rem;
+    line-height: 1rem;
+  }
+  .slogan {
+    font-size: 1.25rem;
+    line-height: 1rem;
+  }
+  .description {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+  .about-section-content img {
+    width: 20rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .separator-leaf-icon {
+    height: 2rem;
+  }
+  .about-section {
+    font-size: 0.8rem;
+    margin: 0 0 2.5rem 0;
+  }
+  .services-section {
+    margin: 0 0 2.5rem 0;
+  }
+  .about-section-right-col a {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  .services-left-col {
+    flex-direction: column;
+  }
+  .services-section-images {
+    flex-direction: column;
+  }
+  #rockGardenImg {
+    left: 10rem;
+    top: -21rem;
+    height: 9rem;
+  }
+  #bushTrimmingImg {
+    left: 9rem;
+    top: -14rem;
+    height: 9rem;
+  }
+  .services-list-header img {
+    height: 2rem;
+  }
+  .services-list-header p {
+    font-size: 1rem;
+  }
+  .services-left-col ul {
+    font-size: 0.8rem;
+  }
+  .img-viewer-container {
+    max-width: 20rem;
+  }
+  .large-img-container img {
+    max-width: 15rem;
+    max-height: 12rem;
+  }
+  .thumbnails-reel img {
+    height: 1.5rem;
+  }
+  .thumbnail-img {
+    height: 10rem;
+    max-width: 20rem;
+  }
+  .image-count {
+    font-size: 1rem;
   }
 }
