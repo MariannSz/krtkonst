@@ -535,19 +535,29 @@
             <span class="close-button" id="x-button-4">&times;</span>
             <div class="large-img-container">
               <img
+                src="icons/caret-left-fill.svg"
+                style="height: 2rem"
+                onclick="selectPreviousImg(4, 2)"
+              />
+              <img
                 src="assets/subgallery-4/pic1.jpg"
                 alt="garden under construction"
                 id="large-img-4"
+              />
+              <img
+                src="icons/caret-right-fill.svg"
+                onclick="selectNextImg(4, 2)"
+                style="height: 2rem"
               />
             </div>
             <div class="thumbnails-reel">
               <img
                 src="assets/subgallery-4/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img-4').src = 'assets/subgallery-4/pic1.jpg'"
+                onclick="selectImage(4, 1)"
               />
               <img
                 src="assets/subgallery-4/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-4').src = 'assets/subgallery-4/pic2.jpg'"
+                onclick="selectImage(4, 2)"
               />
             </div>
           </div>
@@ -555,19 +565,29 @@
             <span class="close-button" id="x-button-5">&times;</span>
             <div class="large-img-container">
               <img
+                src="icons/caret-left-fill.svg"
+                style="height: 2rem"
+                onclick="selectPreviousImg(5, 2)"
+              />
+              <img
                 src="assets/subgallery-5/pic1.jpg"
                 alt="garden under construction"
                 id="large-img-5"
+              />
+              <img
+                src="icons/caret-right-fill.svg"
+                onclick="selectNextImg(5, 2)"
+                style="height: 2rem"
               />
             </div>
             <div class="thumbnails-reel">
               <img
                 src="assets/subgallery-5/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img-5').src = 'assets/subgallery-5/pic1.jpg'"
+                onclick="selectImage(5, 1)"
               />
               <img
                 src="assets/subgallery-5/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-5').src = 'assets/subgallery-5/pic2.jpg'"
+                onclick="selectImage(5, 2)"
               />
             </div>
           </div>
@@ -575,23 +595,33 @@
             <span class="close-button" id="x-button-6">&times;</span>
             <div class="large-img-container">
               <img
+                src="icons/caret-left-fill.svg"
+                style="height: 2rem"
+                onclick="selectPreviousImg(6, 3)"
+              />
+              <img
                 src="assets/subgallery-6/pic1.jpg"
                 alt="garden under construction"
                 id="large-img-6"
+              />
+              <img
+                src="icons/caret-right-fill.svg"
+                onclick="selectNextImg(6, 3)"
+                style="height: 2rem"
               />
             </div>
             <div class="thumbnails-reel">
               <img
                 src="assets/subgallery-6/thumbnails/thumbnail1.png"
-                onclick="document.getElementById('large-img-6').src = 'assets/subgallery-6/pic1.jpg'"
+                onclick="selectImage(6, 1)"
               />
               <img
                 src="assets/subgallery-6/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-6').src = 'assets/subgallery-6/pic2.jpg'"
+                onclick="selectImage(6, 2)"
               />
               <img
-                src="assets/subgallery-6/thumbnails/thumbnail2.png"
-                onclick="document.getElementById('large-img-6').src = 'assets/subgallery-6/pic3.jpg'"
+                src="assets/subgallery-6/thumbnails/thumbnail3.png"
+                onclick="selectImage(6, 3)"
               />
             </div>
           </div>
