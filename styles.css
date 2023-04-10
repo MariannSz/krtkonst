@@ -471,7 +471,6 @@ li {
   }
 
   .img-viewer-container {
-    /* width: 60%; */
     width: auto;
   }
   .thumbnails-reel {
@@ -521,12 +520,12 @@ li {
     flex-direction: column;
   }
   #rockGardenImg {
-    left: 10rem;
+    left: 8rem;
     top: -21rem;
     height: 9rem;
   }
   #bushTrimmingImg {
-    left: 9rem;
+    left: 6rem;
     top: -14rem;
     height: 9rem;
   }
