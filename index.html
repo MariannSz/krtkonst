@@ -11,6 +11,13 @@
     <div id="modal-overlay"></div>
     <div id="dropdown-overlay" onclick="closeDropdownElements()"></div>
     <div id="copy-to-clipboard-success"></div>
+    <div class="mobile-nav-menu" id="mobile-nav-menu">
+      <a href="#about">Rólunk</a>
+      <a href="#services">Szolgáltatásaink</a>
+      <a href="#gallery">Képgaléria</a>
+      <a href="tel:36302763013">Hívás</a>
+      <a href="mailto:info@kertkonstruktor.hu">Üzenet küldése</a>
+    </div>
     <div class="container">
       <div class="phone-dropdown" id="phone-dropdown">
         <a href="tel:36302763013">Hívás</a>
@@ -19,6 +26,48 @@
       <div class="email-dropdown" id="email-dropdown">
         <a href="mailto:info@kertkonstruktor.hu">Üzenet küldése</a>
         <a onclick="copyToClipboard(`info@kertkonstruktor.hu`)">Másolás</a>
+      </div>
+      <div class="mobile-header">
+        <nav class="mobile-navigation">
+          <div class="contacts">
+            <a
+              id="phoneInfo"
+              onclick="copyToClipboard(`+36302763013`)"
+              class="contacts-item"
+              onmouseenter="colorMobilePhoneIcon()"
+              onmouseleave="resetMobilePhoneIcon()"
+            >
+              <img
+                src="icons/telephone.svg"
+                alt="phone icon svg"
+                id="mobile-phoneIcon"
+              />
+              +36-30/276-3013
+            </a>
+            <a
+              id="mailInfo"
+              onclick="copyToClipboard(`info@kertkonstruktor.hu`)"
+              class="contacts-item"
+              onmouseenter="colorMobileMailIcon()"
+              onmouseleave="resetMobileMailIcon()"
+            >
+              <img
+                src="icons/envelope-at.svg"
+                alt="envelope icon svg"
+                id="mobile-mailIcon"
+              />
+              info@kertkonstruktor.hu
+            </a>
+          </div>
+          <a>
+            <img
+              id="mobile-nav-toggle"
+              src="icons/list.svg"
+              onclick="toggleMobileMenu()"
+              alt="hidden-menu-icon"
+            />
+          </a>
+        </nav>
       </div>
       <div class="header">
         <nav>
@@ -32,6 +81,8 @@
               id="phoneInfo"
               onclick="openPhoneDropdown()"
               class="contacts-item"
+              onmouseenter="colorPhoneIcon()"
+              onmouseleave="resetPhoneIcon()"
             >
               <img
                 src="icons/telephone.svg"
@@ -44,6 +95,8 @@
               id="mailInfo"
               onclick="openEmailDropdown()"
               class="contacts-item"
+              onmouseenter="colorMailIcon()"
+              onmouseleave="resetMailIcon()"
             >
               <img
                 src="icons/envelope-at.svg"
@@ -599,22 +652,16 @@
       </div>
     </div>
     <script>
-      let phoneInfo = document.getElementById("phoneInfo");
-      let phoneIcon = document.getElementById("phoneIcon");
-      let mailInfo = document.getElementById("mailInfo");
-      let mailIcon = document.getElementById("mailIcon");
-      phoneInfo.addEventListener("mouseenter", (event) => {
-        phoneIcon.src = "icons/telephone-hover.svg";
-      });
-      phoneInfo.addEventListener("mouseleave", (event) => {
-        phoneIcon.src = "icons/telephone.svg";
-      });
-      mailInfo.addEventListener("mouseenter", (event) => {
-        mailIcon.src = "icons/envelope-at-hover.svg";
-      });
-      mailInfo.addEventListener("mouseleave", (event) => {
-        mailIcon.src = "icons/envelope-at.svg";
-      });
+      let mobileNavToggle = document.getElementById("mobile-nav-toggle");
+
+      if (mobileNavToggle) {
+        mobileNavToggle.addEventListener("mouseenter", (event) => {
+          mobileNavToggle.src = "icons/list-hover.svg";
+        });
+        mobileNavToggle.addEventListener("mouseleave", (event) => {
+          mobileNavToggle.src = "icons/list.svg";
+        });
+      }
 
       let gallery = document.getElementsByClassName(
         "gallery-section-content"
@@ -787,7 +834,7 @@
       };
       const closePhoneDropdown = () => {
         document.getElementById("phone-dropdown").style.display = "none";
-        document.getElementById("dropdown-overlay").style.display = "none";
+        // document.getElementById("dropdown-overlay").style.display = "none";
       };
       const openEmailDropdown = () => {
         let emailDropdown = document.getElementById("email-dropdown");
@@ -798,7 +845,7 @@
       };
       const closeEmailDropdown = () => {
         document.getElementById("email-dropdown").style.display = "none";
-        document.getElementById("dropdown-overlay").style.display = "none";
+        // document.getElementById("dropdown-overlay").style.display = "none";
       };
       const closeCopyFeedbackDropdown = () => {
         let feedbackPopUp = document.getElementById(
@@ -807,9 +854,12 @@
         feedbackPopUp.style.display = "none";
       };
       const closeDropdownElements = () => {
+        document.getElementById("dropdown-overlay").style.display = "none";
         closePhoneDropdown();
         closeEmailDropdown();
         closeCopyFeedbackDropdown();
+        let mobileMenu = document.getElementById("mobile-nav-menu");
+        mobileMenu.style.display = "none";
       };
       const copyToClipboard = async (copyText) => {
         let text = copyText;
@@ -831,6 +881,53 @@
             feedbackPopUp.style.display = "none";
           }, 3000);
         }
+      };
+      const toggleMobileMenu = () => {
+        let mobileMenu = document.getElementById("mobile-nav-menu");
+        if (mobileMenu) {
+          if (mobileMenu.style.display !== "flex") {
+            mobileMenu.style.display = "flex";
+            mobileMenu.style.flexDirection = "column";
+            mobileMenu.style.gap = "1rem";
+            document.getElementById("dropdown-overlay").style.display = "block";
+          } else {
+            mobileMenu.style.display = "none";
+            document.getElementById("dropdown-overlay").style.display = "none";
+          }
+        } else {
+        }
+      };
+      const colorPhoneIcon = () => {
+        let phoneIcon = document.getElementById("phoneIcon");
+        phoneIcon.src = `icons/telephone-hover.svg`;
+      };
+      const resetPhoneIcon = () => {
+        let phoneIcon = document.getElementById("phoneIcon");
+        phoneIcon.src = `icons/telephone.svg`;
+      };
+      const colorMailIcon = () => {
+        let mailIcon = document.getElementById("mailIcon");
+        mailIcon.src = `icons/envelope-at-hover.svg`;
+      };
+      const resetMailIcon = () => {
+        let mailIcon = document.getElementById("mailIcon");
+        mailIcon.src = `icons/envelope-at.svg`;
+      };
+      const colorMobilePhoneIcon = () => {
+        let phoneIcon = document.getElementById("mobile-phoneIcon");
+        phoneIcon.src = `icons/telephone-hover.svg`;
+      };
+      const resetMobilePhoneIcon = () => {
+        let phoneIcon = document.getElementById("mobile-phoneIcon");
+        phoneIcon.src = `icons/telephone.svg`;
+      };
+      const colorMobileMailIcon = () => {
+        let mailIcon = document.getElementById("mobile-mailIcon");
+        mailIcon.src = `icons/envelope-at-hover.svg`;
+      };
+      const resetMobileMailIcon = () => {
+        let mailIcon = document.getElementById("mobile-mailIcon");
+        mailIcon.src = `icons/envelope-at.svg`;
       };
     </script>
   </body>
