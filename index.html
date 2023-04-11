@@ -79,8 +79,6 @@
               id="phoneInfo"
               onclick="openPhoneDropdown()"
               class="contacts-item"
-              onmouseenter="colorPhoneIcon()"
-              onmouseleave="resetPhoneIcon()"
             >
               <img
                 src="icons/telephone.svg"
@@ -93,8 +91,6 @@
               id="mailInfo"
               onclick="openEmailDropdown()"
               class="contacts-item"
-              onmouseenter="colorMailIcon()"
-              onmouseleave="resetMailIcon()"
             >
               <img
                 src="icons/envelope-at.svg"
@@ -115,7 +111,7 @@
           <span class="co-name">Kertkonstruktor</span>
           <span class="slogan">Az ígéret földje</span>
           <span class="description">
-            Kertépítesi, kerttechnikai valamint kert és parkfenntartási
+            Kertépítési, kerttechnikai valamint kert és parkfenntartási
             szolgáltatások Balatonfüreden és környékén 25 éves tapasztalattal.
           </span>
         </div>
@@ -141,7 +137,7 @@
           <div class="about-section-right-col">
             <p>
               Elsők között indultunk Balatonfüreden és környékén. Mostanra 25
-              éves tapasztalatra tettünk szert. Széleskörű szolgaltatásokat
+              éves tapasztalatra tettünk szert. Széleskörű szolgáltatásokat
               fedünk le a kert és parkfenntartástól a különböző kertépítési
               munkákon át a kerttechnikai berendezések telepítéséig és
               javításáig (öntözőrendszerek, mesterséges patakok, kisebb
@@ -185,12 +181,12 @@
               <ul>
                 <li>Önkeringetős minivízesés</li>
                 <li>Kis kerti tavak, mesterséges patakok</li>
-                <li>Hunter markájú öntözőrendszer telepítése és javítása</li>
+                <li>Hunter márkájú öntözőrendszer telepítése és javítása</li>
                 <li>Speciális gépekkel széles és magas növények vágása</li>
                 <li>Gyűjtős fűnyírás</li>
                 <li>Gépi kaszálás</li>
                 <li>Veszélyes fák kivágása aprítással és elszállítással</li>
-                <li>Növenyvédelmi kártevőírtás permetező gépekkel</li>
+                <li>Növényvédelmi kártevőírtás permetező gépekkel</li>
                 <li>Kullancsírtás</li>
                 <li>Sövényvágás és formára alakítás</li>
                 <li>Favisszafiatalítás</li>
@@ -216,7 +212,7 @@
                 <li>Szegélyek</li>
                 <li>Kocsibeállók</li>
                 <li>Támfalak</li>
-                <li>Kerti lepcsők</li>
+                <li>Kerti lépcsők</li>
               </ul>
             </div>
           </div>
@@ -788,57 +784,6 @@
       )[0];
       let thumbnails = document.querySelectorAll(".thumbnail");
       thumbnails.forEach((element, ind) => {
-        /* element.addEventListener("mouseenter", (event) => {
-          let currentImg = thumbnails[ind].getElementsByTagName("img")[0];
-          let currentOverlay =
-            thumbnails[ind].getElementsByClassName("image-count")[0];
-          let currentOverlayBg =
-            thumbnails[ind].getElementsByClassName("thumbnail-overlay")[0];
-          console.log(`current overlay = ${currentOverlay}`);
-          switch (ind) {
-            case 0:
-              currentOverlay.innerHTML = "7 kép";
-              break;
-            case 1:
-              currentOverlay.innerHTML = "8 kép";
-              break;
-            case 2:
-              currentOverlay.innerHTML = "14 kép";
-              break;
-            case 3:
-              currentOverlay.innerHTML = "2 kép";
-              break;
-            case 4:
-              currentOverlay.innerHTML = "2 kép";
-              break;
-            case 5:
-              currentOverlay.innerHTML = "3 kép";
-              break;
-            case 6:
-              currentOverlay.innerHTML = "1 kép";
-              break;
-            case 7:
-              currentOverlay.innerHTML = "3 kép";
-              break;
-            case 8:
-              currentOverlay.innerHTML = "2 kép";
-              break;
-            case 9:
-              currentOverlay.innerHTML = "2 kép";
-              break;
-            case 10:
-              currentOverlay.innerHTML = "3 kép";
-              break;
-
-            default:
-              break;
-          }
-
-          currentImg.style.boxShadow = "8px 8px 16px rgba(0, 0, 0, 0.25)";
-          currentOverlayBg.style.opacity = "50%";
-          currentOverlayBg.style.backgroundImage =
-            "linear-gradient(#05994c, #27d408)";
-        }); */
         element.addEventListener("click", (event) => {
           let modalOverlay = document.getElementById("modal-overlay");
           let exitButton = document.getElementById(`x-button-${ind + 1}`);
@@ -891,18 +836,7 @@
           exitButton.removeEventListener("click", () => {});
         });
       });
-      /* thumbnails.forEach((element, ind) => {
-        element.addEventListener("mouseleave", (event) => {
-          let currentImg = thumbnails[ind].getElementsByTagName("img")[0];
-          let currentOverlay =
-            thumbnails[ind].getElementsByClassName("image-count")[0];
-          let currentOverlayBg =
-            thumbnails[ind].getElementsByClassName("thumbnail-overlay")[0];
-          currentOverlay.innerHTML = "";
-          currentImg.style.boxShadow = "";
-          currentOverlayBg.style.backgroundImage = "";
-        });
-      }); */
+
       const openPhoneDropdown = () => {
         let phoneDropdown = document.getElementById("phone-dropdown");
         phoneDropdown.style.display = "flex";
@@ -938,6 +872,7 @@
         closePhoneDropdown();
         closeEmailDropdown();
         closeCopyFeedbackDropdown();
+        closeMobileNav();
       };
       const copyToClipboard = async (copyText) => {
         let text = copyText;
