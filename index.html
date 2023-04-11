@@ -12,9 +12,13 @@
     <div id="dropdown-overlay" onclick="closeDropdownElements()"></div>
     <div id="copy-to-clipboard-success"></div>
     <div class="mobile-nav-menu" id="mobile-nav-menu">
-      <a href="#about" onclick="closeMobileNav()">Rólunk</a>
-      <a href="#services" onclick="closeMobileNav()">Szolgáltatásaink</a>
-      <a href="#gallery" onclick="closeMobileNav()">Képgaléria</a>
+      <a href="#about" class="about-link" onclick="closeMobileNav()">Rólunk</a>
+      <a href="#services" class="services-link" onclick="closeMobileNav()"
+        >Szolgáltatásaink</a
+      >
+      <a href="#gallery" class="gallery-link" onclick="closeMobileNav()"
+        >Képgaléria</a
+      >
       <a href="tel:36302763013" onclick="closeMobileNav()">Hívás</a>
       <a href="mailto:info@kertkonstruktor.hu" onclick="closeMobileNav()"
         >Üzenet küldése</a
@@ -70,9 +74,9 @@
       <div class="header">
         <nav>
           <div class="navigation">
-            <a href="#about">Rólunk</a>
-            <a href="#services">Szolgáltatásaink</a>
-            <a href="#gallery">Képgaléria</a>
+            <a href="#about" class="about-link">Rólunk</a>
+            <a href="#services" class="services-link">Szolgáltatásaink</a>
+            <a href="#gallery" class="gallery-link">Képgaléria</a>
           </div>
           <div class="contacts">
             <a
@@ -990,6 +994,106 @@
           });
         }
       };
+      let navigation = document.getElementsByClassName("navigation")[0];
+      let aboutNavigation = navigation.querySelector(".about-link");
+      let mobileNavigation =
+        document.getElementsByClassName("mobile-nav-menu")[0];
+      let mobileAboutNavigation = mobileNavigation.querySelector(".about-link");
+      const el = document.querySelector("#about");
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            aboutNavigation.style.color = "#05994c";
+            return;
+          }
+          aboutNavigation.style.color = "#2d3631";
+        },
+        {
+          root: null,
+          threshold: 0.5,
+        }
+      );
+      const mobileObserver = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            mobileAboutNavigation.style.color = "#05994c";
+            return;
+          }
+          mobileAboutNavigation.style.color = "#2d3631";
+        },
+        {
+          root: null,
+          threshold: 0.8,
+        }
+      );
+      let servicesNavigation = navigation.querySelector(".services-link");
+      let mobileServicesNavigation =
+        mobileNavigation.querySelector(".services-link");
+      const servicesEl = document.querySelector("#services");
+      const servicesObserver = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            servicesNavigation.style.color = "#05994c";
+            return;
+          }
+          servicesNavigation.style.color = "#2d3631";
+        },
+        {
+          root: null,
+          threshold: 0.5,
+        }
+      );
+      const servicesMobileObserver = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            mobileServicesNavigation.style.color = "#05994c";
+            return;
+          }
+          mobileServicesNavigation.style.color = "#2d3631";
+        },
+        {
+          root: null,
+          threshold: 0.4,
+        }
+      );
+
+      let galleryNavigation = navigation.querySelector(".gallery-link");
+      let mobileGalleryNavigation =
+        mobileNavigation.querySelector(".gallery-link");
+      const galleryEl = document.querySelector("#gallery");
+      const galleryObserver = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            galleryNavigation.style.color = "#05994c";
+            return;
+          }
+          galleryNavigation.style.color = "#2d3631";
+        },
+        {
+          root: null,
+          threshold: 0.4,
+        }
+      );
+      const galleryMobileObserver = new window.IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            mobileGalleryNavigation.style.color = "#05994c";
+            return;
+          }
+          mobileGalleryNavigation.style.color = "#2d3631";
+        },
+        {
+          root: null,
+          threshold: 0.3,
+        }
+      );
+
+      observer.observe(el);
+      mobileObserver.observe(el);
+      servicesObserver.observe(servicesEl);
+      servicesMobileObserver.observe(servicesEl);
+      galleryObserver.observe(galleryEl);
+      galleryMobileObserver.observe(galleryEl);
     </script>
   </body>
 </html>

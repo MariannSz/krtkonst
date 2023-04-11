@@ -12,6 +12,10 @@
   src: url(Poppins/Poppins-Light.ttf);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #2d3631;
   margin: 0 auto;
