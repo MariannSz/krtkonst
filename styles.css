@@ -322,6 +322,10 @@ li {
   align-items: center;
 }
 
+.large-img-container img:first-child,
+.large-img-container img:last-child {
+  cursor: pointer;
+}
 .large-img-container img {
   max-width: 30rem;
   max-height: 22rem;
