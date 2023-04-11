@@ -796,7 +796,6 @@
           );
           let imgViewerThumbnailsReel =
             imgViewerContainer.querySelectorAll(".thumbnails-reel")[0];
-          console.log(`imgViewerReel: ${imgViewerThumbnailsReel}`);
           let imgViewerThumbnails =
             imgViewerThumbnailsReel.querySelectorAll("img");
           modalOverlay.style.display = "block";
@@ -923,10 +922,10 @@
         let selectedImageURL = document.getElementById(
           `large-img-${subGalleryNumber}`
         ).src;
-        console.log(`selectedImageURL: ${selectedImageURL}`);
-        let selectedNumberString = selectedImageURL.slice(-5, -4);
+        let sliceStart = selectedImageURL.indexOf("pic") + 3;
+        let sliceEnd = selectedImageURL.indexOf(".jpg");
+        let selectedNumberString = selectedImageURL.slice(sliceStart, sliceEnd);
         let selectedImgNumber = parseInt(selectedNumberString);
-        console.log(`selectedImgNumber: ${selectedImgNumber}`);
         if (selectedImgNumber === 1) {
           return;
         } else {
@@ -942,7 +941,6 @@
             subGallery.getElementsByClassName(`thumbnails-reel`)[0];
           let imgViewerThumbnails =
             imgViewerThumbnaislsReel.querySelectorAll(`img`);
-          console.log(`imgViewerThumbnails: ${imgViewerThumbnails}`);
           imgViewerThumbnails.forEach((element, ind) => {
             element.style.padding = "0";
             element.style.background = "";
@@ -961,10 +959,11 @@
         let selectedImageURL = document.getElementById(
           `large-img-${subGalleryNumber}`
         ).src;
-        console.log(`selectedImageURL: ${selectedImageURL}`);
-        let selectedNumberString = selectedImageURL.slice(-5, -4);
+        let sliceStart = selectedImageURL.indexOf("pic") + 3;
+        let sliceEnd = selectedImageURL.indexOf(".jpg");
+
+        let selectedNumberString = selectedImageURL.slice(sliceStart, sliceEnd);
         let selectedImgNumber = parseInt(selectedNumberString);
-        console.log(`selectedImgNumber: ${selectedImgNumber}`);
 
         if (selectedImgNumber === totalPics) {
           return;
@@ -981,7 +980,6 @@
             subGallery.getElementsByClassName(`thumbnails-reel`)[0];
           let imgViewerThumbnails =
             imgViewerThumbnaislsReel.querySelectorAll(`img`);
-          console.log(`imgViewerThumbnails: ${imgViewerThumbnails}`);
           imgViewerThumbnails.forEach((element, ind) => {
             element.style.padding = "0";
             element.style.background = "";
