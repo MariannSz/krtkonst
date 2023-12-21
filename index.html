@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Balatonfüred, kert, kertek, parkfenntartás, kerttechnika, kertépítés, kertész, öntözőrendszer, öntözőrendszerek, minivízesés, fűnyírás, kaszálás, sövényvágás, lombfújás, füvesítés, gyepszőnyegezés, gyepszőnyeg, kullancsírtás, favisszafiatalítás, gyepszellőztetés, tápanyagpótlás, tereprendezés, növénytelepítés, sziklakertek, kerti utak, kerti, térköves parkolók, térköves, szegélyek, kocsibeállók, támfalak, kerti lépcsők"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Kertkonstruktor</title>
   </head>
@@ -19,14 +23,14 @@
       <a href="#gallery" class="gallery-link" onclick="closeMobileNav()"
         >Képgaléria</a
       >
-      <a href="tel:36302763013" onclick="closeMobileNav()">Hívás</a>
+      <a href="tel:+36302763013" onclick="closeMobileNav()">Hívás</a>
       <a href="mailto:info@kertkonstruktor.hu" onclick="closeMobileNav()"
         >Üzenet küldése</a
       >
     </div>
     <div class="container">
       <div class="phone-dropdown" id="phone-dropdown">
-        <a href="tel:36302763013">Hívás</a>
+        <a href="tel:+36302763013">Hívás</a>
         <a onclick="copyToClipboard(`+36302763013`)">Másolás</a>
       </div>
       <div class="email-dropdown" id="email-dropdown">
@@ -864,7 +868,9 @@
         let feedbackPopUp = document.getElementById(
           "copy-to-clipboard-success"
         );
-        feedbackPopUp.style.display = "none";
+        if (feedbackPopUp) {
+          feedbackPopUp.style.display = "none";
+        }
       };
       const closeMobileNav = () => {
         let mobileMenu = document.getElementById("mobile-nav-menu");
@@ -885,17 +891,25 @@
           let feedbackPopUp = document.getElementById(
             "copy-to-clipboard-success"
           );
-          feedbackPopUp.innerText = "Vágólapra másolva";
-          feedbackPopUp.style.display = "block";
+          if (feedbackPopUp) {
+            feedbackPopUp.innerText = "Vágólapra másolva";
+            feedbackPopUp.style.display = "block";
+          }
           setTimeout(function () {
-            feedbackPopUp.style.display = "none";
+            if (feedbackPopUp) {
+              feedbackPopUp.style.display = "none";
+            }
           }, 3000);
         } catch (err) {
-          feedbackPopUp.innerText =
-            "Hiba történt, kérem próbálja meg manuálisan";
-          feedbackPopUp.style.display = "block";
+          if (feedbackPopUp) {
+            feedbackPopUp.innerText =
+              "Hiba történt, kérem próbálja meg manuálisan";
+            feedbackPopUp.style.display = "block";
+          }
           setTimeout(function () {
-            feedbackPopUp.style.display = "none";
+            if (feedbackPopUp) {
+              feedbackPopUp.style.display = "none";
+            }
           }, 3000);
         }
       };
