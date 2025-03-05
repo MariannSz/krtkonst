@@ -130,8 +130,11 @@ a:hover {
   text-align: center;
 }
 
-.hero-text span {
+.hero-text h1,
+h2,
+p {
   font-family: boldKarlaFont;
+  margin: 0;
 }
 
 .co-name {
@@ -157,7 +160,7 @@ a:hover {
   opacity: 75%;
 }
 
-.about-section {
+.about-section p {
   margin: 0 0 5.5rem 0;
   font-family: lightPoppinsFont;
   font-size: 1rem;
@@ -223,12 +226,12 @@ a:hover {
   gap: 4rem;
 }
 
-.services-left-col p,
+.services-left-col h1,
 .services-left-col ul {
   opacity: 75%;
 }
 
-.services-left-col p {
+.services-left-col h1 {
   margin: 0;
   font-family: boldKarlaFont;
   font-size: 1.813rem;
